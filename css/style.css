@@ -7,8 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-:focus {
+body {
+    overflow-x: hidden;
+}
 
+:focus {
     outline: 0;
 }
 
@@ -49,6 +52,13 @@ input[type="submit"]:focus {
     color: white;
 }
 
+nav .menu .line {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin-top: 5px;
+} 
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -61,6 +71,11 @@ nav ul {
 nav ul li {
     color: #fff;
     font-weight: 600;
+    display: none;
+}
+
+nav .btn {
+    display: none;
 }
 
 nav ul li:hover,
@@ -110,7 +125,7 @@ aside h2 {
 }
 
 .main-area {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     color: #fff;
     background-image: linear-gradient(to right, rgb(0 0 0 / .65) 40%, transparent);
@@ -121,11 +136,11 @@ aside h2 {
 
 .hero {
     height: 100%;
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3em;
+    padding: 5em 3em;
     gap: .5em;
 }
 
@@ -140,11 +155,14 @@ aside h2 {
 
 .flex-area {
     display: flex;
-    padding: 0 10em;
+    padding: 8.8em 10em;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
     height: 100%;
+
+    gap: 5em;
+    flex-direction: column;
 }
 
 .login, .sign-up {
@@ -176,6 +194,8 @@ aside h2 {
     height: 100%;
     background-color: white;
     gap: 5em;
+
+    flex-direction: column;
 }
 
 .card {
@@ -201,8 +221,8 @@ aside h2 {
 
 .special-offer {
     color: #ff0000;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
+    /* writing-mode: vertical-rl; */
+    /* text-orientation: upright; */
     font-size: 1.3rem;
     align-self: center;
     font-weight: bold;
@@ -212,8 +232,10 @@ aside h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+    gap: 3em;
 
-    padding: 5em;
+    padding: 3em;
 }
 
 .members:nth-of-type(even) {
@@ -229,6 +251,7 @@ aside h2 {
     height: auto;
     border-radius: 5em;
 }
+
 
 .members .btn {
     color: #000;
@@ -255,4 +278,32 @@ aside h2 {
 
 .members p {
     margin-top: 1em;
+}
+
+@media (min-width: 800px) {
+    nav ul li {
+        display: block;
+    }
+
+    nav .btn {
+        display: block;
+    }
+
+    nav .menu {
+        display: none;
+    }
+
+    .hero {
+        width: 60%;
+        padding: 13em 3em;
+    }
+
+    .members {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .flex-area {
+        flex-direction: row;
+    }
 }
